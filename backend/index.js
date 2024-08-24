@@ -4,7 +4,12 @@ const express = require("express");
 const mongoose = require("mongoose");
 const { HoldingsModel } = require("./model/HoldingsModel");
 const { PositionsModel } = require("./model/PositionsModel");
+const cors = require("cors");
+const bodyParser = require("body-parser");
 const app = express();
+
+app.use(cors());
+app.use(bodyParser.json());
 
 const PORT = process.env.PORT || 3002;
 const url = process.env.MONGO_URL;
